@@ -1,0 +1,11 @@
+/Users/zhalgasadil/IdeaProjects/TaskManagerApi/src/main/java/com/example/demo/DemoApplication.java
+/Users/zhalgasadil/IdeaProjects/TaskManagerApi/src/main/java/com/example/demo/config/SecurityConfig.java
+/Users/zhalgasadil/IdeaProjects/TaskManagerApi/src/main/java/com/example/demo/controller/TaskController.java
+/Users/zhalgasadil/IdeaProjects/TaskManagerApi/src/main/java/com/example/demo/dto/TaskRequest.java
+/Users/zhalgasadil/IdeaProjects/TaskManagerApi/src/main/java/com/example/demo/dto/TaskResponse.java
+/Users/zhalgasadil/IdeaProjects/TaskManagerApi/src/main/java/com/example/demo/entity/Task.java
+/Users/zhalgasadil/IdeaProjects/TaskManagerApi/src/main/java/com/example/demo/entity/TaskStatus.java
+/Users/zhalgasadil/IdeaProjects/TaskManagerApi/src/main/java/com/example/demo/exception/GlobalExceptionHandler.java
+/Users/zhalgasadil/IdeaProjects/TaskManagerApi/src/main/java/com/example/demo/exception/TaskNotFoundException.java
+/Users/zhalgasadil/IdeaProjects/TaskManagerApi/src/main/java/com/example/demo/repository/TaskRepository.java
+/Users/zhalgasadil/IdeaProjects/TaskManagerApi/src/main/java/com/example/demo/service/TaskService.java

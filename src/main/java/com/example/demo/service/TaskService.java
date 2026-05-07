@@ -9,6 +9,7 @@ import com.example.demo.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -51,6 +52,26 @@ public class TaskService {
                 .status(task.getStatus())
                 .deadline(task.getDeadline())
                 .build();
+    }
+
+
+    public TaskResponse update(Long id, TaskRequest request){
+        Task task = getTask(id);
+        task.setTitle(request.getTitle());
+        task.setDescription(request.getDescription());
+        task.setStatus(request.getStatus());
+        task.setDeadline(request.getDeadline());
+        return toResponse(taskRepository.save(task));
+    }
+
+    public void delete(Long id) {
+        getTask(id);
+        taskRepository.deleteById(id);
+    }
+
+    private Task getTask(Long id){
+        return taskRepository.findById(id)
+                .orElseThrow(() -> new TaskNotFoundException(id));
     }
 
 
