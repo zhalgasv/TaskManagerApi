@@ -4,6 +4,7 @@ import com.example.demo.dto.TaskRequest;
 import com.example.demo.dto.TaskResponse;
 import com.example.demo.entity.Task;
 import com.example.demo.entity.TaskStatus;
+import com.example.demo.exception.TaskNotFoundException;
 import com.example.demo.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class TaskService {
     public List<TaskResponse> findAll() {
         return taskRepository.findAll()
                 .stream()
-                .map(this::toResponce)
+                .map(this::toResponse)
                 .toList();
     }
 
@@ -33,16 +34,16 @@ public class TaskService {
                 .createdAt(LocalDateTime.now())
                 .build();
 
-        return toResponce(taskRepository.save(task));
+        return toResponse(taskRepository.save(task));
     }
 
     public TaskResponse findById(Long id){
         Task task = taskRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Task not found: " + id));
-        return toResponce(task);
+                .orElseThrow(() -> new TaskNotFoundException(id));
+        return toResponse(task);
     }
 
-    private TaskResponse toResponce(Task task){
+    private TaskResponse toResponse(Task task){
         return TaskResponse.builder()
                 .id(task.getId())
                 .title(task.getTitle())
