@@ -19,10 +19,22 @@ A RESTful API for task management with JWT authentication, built with Spring Boo
 - Input validation with meaningful error messages
 - Global exception handling
 
+## Architecture
+
+The application follows a layered Spring Boot architecture:
+
+- `controller`: REST endpoints for authentication and task operations
+- `service`: business logic and task ownership checks
+- `repository`: Spring Data JPA persistence
+- `entity`: database models
+- `dto`: request and response models
+- `security`: JWT generation, validation, and request filtering
+- `exception`: centralized API error handling
+
 ## Project Structure
 
 ```
-src/main/java/com/example/demo/
+src/main/java/com/zhalgas/taskmanager/
 ├── controller/         # REST endpoints
 │   ├── AuthController.java
 │   └── TaskController.java
@@ -51,7 +63,7 @@ src/main/java/com/example/demo/
     └── GlobalExceptionHandler.java
 ```
 
-## Getting Started
+## How to Run
 
 ### Prerequisites
 
@@ -108,7 +120,7 @@ The server will start at `http://localhost:8080`
 | PUT | `/api/tasks/{id}` | Update task | ✅ Yes |
 | DELETE | `/api/tasks/{id}` | Delete task | ✅ Yes |
 
-## Usage Examples
+## API Examples
 
 ### Register
 ```bash
@@ -171,6 +183,16 @@ Response:
   "title": "Title is required"
 }
 ```
+
+## Tests
+
+Run all tests:
+
+```bash
+mvn test
+```
+
+Current coverage includes a Spring context smoke test. Good next additions are service tests for task ownership and controller tests for secured endpoints.
 
 ## Author
 

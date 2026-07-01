@@ -8,11 +8,11 @@
 		<version>4.0.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
+	<groupId>com.zhalgas</groupId>
+	<artifactId>task-manager-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
+	<name>task-manager-api</name>
+	<description>Task management REST API built with Spring Boot and PostgreSQL</description>
 	<url/>
 	<licenses>
 		<license/>
